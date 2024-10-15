@@ -2,7 +2,7 @@ import { Controller, Post, Body, Res, Get, HttpCode } from '@nestjs/common';
 import { Response } from 'express';
 import { InvoiceService } from './invoice.service';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
-import { InvoiceDTO } from '../shared/invoice-pdf/invoice.dto';
+import { InvoiceDTO } from '../shared/invoice-pdf/invoice-pdf.dto';
 import { invoiceDataMock } from './invoice.mock';
 
 @ApiTags('Invoice')

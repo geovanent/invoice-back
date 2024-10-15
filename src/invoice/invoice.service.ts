@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { InvoiceDTO } from '../shared/invoice-pdf/invoice.dto';
+import { InvoiceDTO } from '../shared/invoice-pdf/invoice-pdf.dto';
 import { PrismaService } from '../shared/database/database.service';
 import { InvoicePDFService } from '../shared/invoice-pdf/invoice-pdf.service';
 

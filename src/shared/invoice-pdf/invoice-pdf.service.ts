@@ -2,8 +2,7 @@ import { Injectable } from '@nestjs/common';
 import * as pdfMake from 'pdfmake/build/pdfmake';
 import * as pdfFonts from 'pdfmake/build/vfs_fonts';
 import { getInvoiceTemplate } from './templates/invoice-template';
-import { InvoiceDTO } from './invoice.dto';
-import { PrismaService } from 'src/shared/database/database.service';
+import { InvoiceDTO } from './invoice-pdf.dto';
 
 @Injectable()
 export class InvoicePDFService {
@@ -39,12 +38,4 @@ export class InvoicePDFService {
 
     return pdfBuffer;
   }
-
-  // async saveInvoice(clientName: string, bankAccount: string, pdfBase64: string): Promise<Invoice> {
-  //   const invoice = new Invoice();
-  //   invoice.clientName = clientName;
-  //   invoice.bankAccount = bankAccount;
-  //   invoice.invoiceData = pdfBase64; 
-  //   // return this.invoiceRepository.save(invoice);
-  // }
 }

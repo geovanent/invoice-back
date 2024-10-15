@@ -1,4 +1,4 @@
-import { InvoiceDTO } from "../invoice.dto";
+import { InvoiceDTO } from "../invoice-pdf.dto";
 
 export const getInvoiceTemplate = (invoiceDto: InvoiceDTO) => ({
   content: [
