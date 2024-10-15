@@ -39,7 +39,7 @@ export const getInvoiceTemplate = (invoiceDto: InvoiceDTO) => ({
       },
       {
           fontSize: 9,
-          text: 'Veralogica GmbH\nZum Gipelhof 4\nFrankfurt am Main, Hesse, 60594 Germany\nTax ID: DE 319 637 011\n\n',
+          text: 'Company GmbH\nZum Gipelhof 4\nFrankfurt am Main, Hesse, 60594 Germany\nTax ID: DE 319 637 011\n\n',
       },
       {
 
@@ -54,7 +54,7 @@ export const getInvoiceTemplate = (invoiceDto: InvoiceDTO) => ({
       { text: 'Amount', style: 'tableHeader', alignment: 'right' }
     ],
     [
-      'Extra hours supporting Toyota EAR IT on the new backup AWS infrastructure for Veralogica Platform',
+      'Extra hours supporting Company EAR IT on the new backup AWS infrastructure for Company Platform',
       { text:'25'},
       { text:'50.00'},
       'EUR 500.00'

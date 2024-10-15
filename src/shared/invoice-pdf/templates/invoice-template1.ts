@@ -20,7 +20,7 @@ content: [
             ]
         },
         '\n',
-        { text: 'To\nVeralogica GmbH\nZum Gipelhof 4\nFrankfurt am Main, Hesse, 60594\nGermany\nTax ID: DE 319 637 011', style: 'subheader' },
+        { text: 'To\Company GmbH\nZum Gipelhof 4\nFrankfurt am Main, Hesse, 60594\nGermany\nTax ID: DE 319 637 011', style: 'subheader' },
         '\n',
         {
             style: 'tableExample',
@@ -34,7 +34,7 @@ content: [
                         { text: 'Amount',alignment: 'right', style: 'tableHeader', border: [false, false, false, true] }
                     ],
                     [ 
-                        { text: 'Extra hours supporting Toyota EAR IT on the new backup AWS infrastructure for Veralogica Platform', border: [false, false, false, true] }, 
+                        { text: 'Extra hours supporting Company EAR IT on the new backup AWS infrastructure for Company Platform', border: [false, false, false, true] }, 
                         { text: '25',alignment: 'right', border: [false, false, false, true] }, 
                         { text: '20.00',alignment: 'center', border: [false, false, false, true] }, 
                         { text: 'EUR 500.00', alignment: 'right',border: [false, false, false, true] }

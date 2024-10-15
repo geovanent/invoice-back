@@ -2,7 +2,6 @@ import { Controller, Post, Body, Res, Get, HttpCode } from '@nestjs/common';
 import { Response } from 'express';
 import { InvoiceService } from './invoice.service';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
-import { Invoice2Service } from './invoice2.service';
 import { InvoiceDTO } from '../shared/invoice-pdf/invoice.dto';
 import { invoiceDataMock } from './invoice.mock';
 
@@ -22,5 +21,16 @@ export class InvoiceController {
     res.setHeader('Content-Type', 'application/pdf');
     res.setHeader('Content-Disposition', 'attachment; filename=invoice.pdf');
     res.status(200).send(pdfBuffer);
+  }
+
+  @Get('test')
+  async getInvoice(@Res() response: Response) {
+    const invoiceData = invoiceDataMock;
+
+    const pdfBuffer = await this.invoiceService.generateInvoicePDF(invoiceData)
+
+    response.setHeader('Content-Type', 'application/pdf');
+    response.setHeader('Content-Disposition', 'inline');
+    response.send(pdfBuffer);
   }
 }
