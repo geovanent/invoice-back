@@ -3,7 +3,7 @@ export const invoiceDataMock = {
     date: "2024-01-01",
     dueDate: "2024-01-15",
     client: {
-        name: "Geovaneeeeee Chaves",
+        name: "Geovane Chaves",
         addressLine1: "Rua Solidônio Leite, 2694, Apto 114 Bloco C",
         addressLine2: "Vila Ivone, Sao Paulo, Sao Paulo, 03275-000",
         taxId: "AB123456789"

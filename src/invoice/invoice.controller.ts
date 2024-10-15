@@ -3,7 +3,7 @@ import { Response } from 'express';
 import { InvoiceService } from './invoice.service';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 import { Invoice2Service } from './invoice2.service';
-import { InvoiceDTO } from './invoice.dto';
+import { InvoiceDTO } from '../shared/invoice-pdf/invoice.dto';
 import { invoiceDataMock } from './invoice.mock';
 
 @ApiTags('Invoice')
@@ -11,7 +11,6 @@ import { invoiceDataMock } from './invoice.mock';
 export class InvoiceController {
   constructor(
     private readonly invoiceService: InvoiceService,
-    private readonly invoice2Service: Invoice2Service,
     ) {}
 
   @ApiResponse({ status: 201, description: 'Invoice created successfully' })
@@ -23,29 +22,5 @@ export class InvoiceController {
     res.setHeader('Content-Type', 'application/pdf');
     res.setHeader('Content-Disposition', 'attachment; filename=invoice.pdf');
     res.status(200).send(pdfBuffer);
-  }
-
-  @Get()
-  async getInvoice(@Res() response: Response) {
-    const invoiceData = invoiceDataMock;
-
-    const pdfBuffer = await this.invoiceService.generateInvoicePDF(invoiceData)
-
-    response.setHeader('Content-Type', 'application/pdf');
-    response.setHeader('Content-Disposition', 'inline');
-    response.send(pdfBuffer);
-  }
-
-  @Get('v2')
-  async getInvoice2(@Res() response: Response) {
-    const pdfDoc = await this.invoice2Service.createInvoice(null);
-    response.setHeader('Content-Type', 'application/pdf');
-    response.setHeader('Content-Disposition', 'inline; filename=your-file-name.pdf');
-
-    pdfDoc.pipe(response);
-
-    response.on('finish', () => {
-      pdfDoc.end();
-    });
   }
 }
